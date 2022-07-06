@@ -1,0 +1,41 @@
+﻿@model List<Role>
+@{
+
+    TempData["Title"] = "Roles";
+}
+
+<a asp-area="Administration" asp-controller="Roles" asp-action="CreateRole" class="btn btn-success">Create New Role</a>
+
+@*@if (ViewBag.Success == "true")
+{
+    <div class="alert-success">
+        Successfuly deleted.
+    </div>
+}*@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Edit - Delete</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>
+                    <a asp-area="Administration" asp-controller="Roles" asp-action="EditRole" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-area="Administration" asp-controller="Roles" asp-action="RemoveRole" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Remove</a>
+
+            </td>
+
+        </tr>
+    </tbody>
+    }
+</table>
+
+
+

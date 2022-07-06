@@ -1,0 +1,48 @@
+﻿@model UserLoginDto
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4"><span class="fas fa-house-user"></span> Log In</h3></div>
+                <div class="card-body">
+                    <form asp-controller="Auths" asp-action="Login" method="post">
+                        <a asp-controller="Auths" asp-action="LogInWithGoogle" class="btn btn-sm rounded-0 btn-warning w-100">Log In with Google</a>
+                        @*<a asp-controller="Auths" asp-action="LogInWithTwitter" class="btn btn-sm rounded-0 btn-info w-100">Log In with Twitter</a>
+                        <a asp-controller="Auths" asp-action="LogInWithTwitter" class="btn btn-sm rounded-0 btn-danger w-100">Log In with Microsoft</a>*@
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label class="small mb-1" asp-for="Email"></label>
+                            <input class="form-control" asp-for="Email" />
+                            <span class="text-danger" asp-validation-for="Email"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="small mb-1" asp-for="Password"></label>
+                            <input class="form-control" asp-for="Password" />
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-check" asp-for="RememberMe" />
+                            <label class="small" asp-for="RememberMe"></label>
+
+                        </div>
+                        <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                            <a class="small btn btn-link" asp-action="ResetPassword">Fargot Password?</a>
+                            <button type="submit" class="btn btn-lg rounded-0 btn-dark"><span class="fas fa-sign-in-alt"></span>Log In</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <div class="small"><a asp-controller="Auths" asp-action="SignUp" class=" btn btn-dark w-100 rounded-0"><span class="fas fa-user-edit"></span>Sıgn Up!</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

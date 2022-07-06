@@ -1,0 +1,16 @@
+﻿@model RoleAddDto
+
+@{
+    ViewData["Title"] = "Role Create";
+    Layout = "_Layout";
+}
+
+
+<form asp-action="CreateRole"  method="post">
+    <div class="mb-3">
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name">
+        <span class="text-danger" asp-validation-for="Name"> </span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

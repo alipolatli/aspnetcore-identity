@@ -1,0 +1,71 @@
+﻿@model List<System.Security.Claims.Claim>
+<h1>Admin Page</h1>
+
+<h2>Claims </h2>
+<table>
+    <thead>
+        <tr>
+            <th>
+                Issuer
+            </th>
+            <th>
+                OriginalIssuer
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Value
+            </th>
+            <th>
+               ValueType
+            </th>
+            <th>
+                Subject.Name  @*claim kimin hakkında*@
+            </th>
+            <th>
+                Subject.Actor  @*claim kimin hakkında*@
+            </th>
+            <th>
+               Subject.AuthenticationType  @*claim kimin hakkında*@
+            </th>
+            <th>
+                Subject.BootstrapContext  @*claim kimin hakkında*@
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Issuer
+                </td>
+                <td>
+                    @item.OriginalIssuer
+                </td>
+                <td>
+                    @item.Type
+                </td>
+                <td>
+                    @item.Value
+                </td>
+                <td>
+                    @item.ValueType
+                </td>
+                <td>
+                    @item.Subject.Name  @*claim kimin hakkında*@
+                </td>
+                <td>
+                    @item.Subject.Actor  @*claim kimin hakkında*@
+                </td>
+                <td>
+                    @item.Subject.AuthenticationType  @*claim kimin hakkında*@
+                </td>
+                <td>
+                    @item.Subject.BootstrapContext  @*claim kimin hakkında*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

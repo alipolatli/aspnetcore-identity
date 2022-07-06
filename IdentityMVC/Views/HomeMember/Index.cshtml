@@ -1,0 +1,49 @@
+﻿@model UserDto
+@{
+    Layout = "_LayoutMember";
+
+}
+<a class="btn btn-primary" asp-action="ViolentVideo">Violent video</a>
+<a class="btn btn-primary" asp-action="ExchangeRedirect">Exchange graphs</a>
+
+
+<h1>Registered User Index</h1>
+<div class="row">
+    <div class="col-4">
+        <img src="@Model.Thumbnail" />
+        <div class="col-8">
+            <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Username</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Firstname</th>
+                        <th scope="col">Lastname</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">BirthDate</th>
+                        <th scope="col">MemberDate</th>
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Model.UserName</td>
+                        <td> @Model.Email</td>
+                        <td> @Model.FirstName</td>
+                        <td> @Model.LastName</td>
+                        <td> @Model.Gender</td>
+                        <td> @Model.PhoneNumber</td>
+                        <td> @Model.BirthDate</td>
+                        <td> @Model.MemberDate</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+

@@ -1,0 +1,26 @@
+﻿@model List<RoleAssignViewModel>
+@{
+    TempData["Title"] = "Role Assign";
+}
+
+<h2>@ViewBag.Username assign roles.</h2>
+
+<form asp-action="AssignRole" method="post">
+    @*    @foreach (var item in Model)
+    {
+    <p>@item.Exist</p>
+    <p>@item.RoleName</p>
+    <p>@item.RoleId</p>
+
+    //<label class="form-check-label" asp-for="RoleId"></label>
+    }*@
+    @for (var i = 0; i < Model.Count; i++)
+    {
+        <input class="form-check-input" asp-for="@Model[i].Exist" />
+        <label class="form-check-label">@Model[i].RoleName</label>
+        <input type="hidden" asp-for="@Model[i].RoleName" />
+        //<input type="hidden" asp-for="@Model[i].RoleId" />
+        //<p>@Model[i].RoleName</p>
+    }
+    <button class="btn btn-success">Assign</button>
+</form>

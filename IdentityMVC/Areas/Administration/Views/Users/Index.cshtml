@@ -1,0 +1,44 @@
+﻿@addTagHelper *,IdentityMVC
+@model IList<User>
+@{
+    ViewData["Title"] = "Admin";
+}
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Id</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Roles</th>
+            <th scope="col">Assign Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (@Model.Count() <= 0)
+        {
+            <tr>
+                <th scope="row">No Members</th>
+            </tr>
+        }
+        else
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">1</th>
+                    <td>@item.Id</td>
+                    <td>@item.UserName</td>
+                    <td>@item.Email</td>
+                    <td user-id=@item.Id></td>
+                    <td><a asp-area="Administration" asp-controller="Roles" asp-action="AssignRole" asp-route-id="@item.Id"  class="btn btn-info">Assign</a></td>
+                </tr>
+            }
+        }
+
+
+
+    </tbody>
+</table>

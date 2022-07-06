@@ -1,0 +1,13 @@
+﻿@model User
+
+<div class="list-group">
+
+  <a asp-area="Administration" asp-controller="Users" asp-action="Index" class="list-group-item list-group-item-action list-group-item-primary">Members</a>
+  <a asp-area="Administration" asp-controller="Roles" asp-action="Index" class="list-group-item list-group-item-action list-group-item-primary">Roles</a>
+ 
+</div>
+
+<div class="sb-sidenav-footer">
+    <div class="small">Giriş Yapan Kullanıcı:</div>
+    @Model.UserName
+</div>
